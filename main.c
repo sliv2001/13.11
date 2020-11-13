@@ -13,11 +13,12 @@ int main(int argc, char** argv){
 		return 0;
 	for (i=2; i<argc; i++) {
 		my_var = strtok(argv[i], sep);
-		val = strtok(argv[i], sep);
+		val = strtok(NULL, sep);
 		setenv(my_var, val, 1);
+		printf("%s %s\n", my_var, val);
 	}
 	argv1[0] = strtok(argv[1], sep1);
-	while ((val = strtok(argv[1], sep1))!=NULL) {
+	while ((val = strtok(NULL, sep1))!=NULL) {
 		argv1[k] = val;
 		k++;
 	}
